@@ -23,5 +23,17 @@
     }];
 }
 
+- (void) enableRemarketing:(CDVInvokedUrlCommand*)command {
+    NSString *conversion_id = [command.arguments objectAtIndex:0];
+    
+    [self.commandDelegate runInBackground:^{
+        
+        [ACTAutomatedUsageTracker enableAutomatedUsageReportingWithConversionID:conversion_id];
+        
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
+}
+
 @end
 

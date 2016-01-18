@@ -6,4 +6,6 @@
 
 - (void)track:(CDVInvokedUrlCommand*)command;
 
+- (void) trackApplicationUsage:(CDVInvokedUrlCommand*)command;
+
 @end

@@ -40,5 +40,14 @@ public class GoogleAppTracking extends CordovaPlugin {
     }
 
   }
+    
+    private void trackApplicationUsage(String conversion_id, CallbackContext callbackContext) {
+        try {
+            
+            AdWordsAutomatedUsageReporter.enableAutomatedUsageReporting(this.cordova.getActivity().getApplicationContext(), conversion_id);
+        } catch(final Exception e) {
+            callbackContext.error("Error in AutomatedUsageReporting.");
+        }
+    }
 }
 
