@@ -8,4 +8,6 @@
 
 - (void) trackApplicationUsage:(CDVInvokedUrlCommand*)command;
 
+- (void) enableRemarketing:(CDVInvokedUrlCommand*)command;
+
 @end
